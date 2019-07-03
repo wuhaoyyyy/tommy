@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.who.tommy.dao.SysMenuMapper" >
+  <resultMap id="BaseResultMap" type="com.who.tommy.entity.SysMenu" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="pid" property="pid" jdbcType="BIGINT" />
+    <result column="link" property="link" jdbcType="VARCHAR" />
+    <result column="order" property="order" jdbcType="INTEGER" />
+    <result column="e1" property="e1" jdbcType="VARCHAR" />
+    <result column="e2" property="e2" jdbcType="VARCHAR" />
+    <result column="e3" property="e3" jdbcType="VARCHAR" />
+    <result column="e4" property="e4" jdbcType="VARCHAR" />
+    <result column="e5" property="e5" jdbcType="VARCHAR" />
+    <result column="e6" property="e6" jdbcType="VARCHAR" />
+    <result column="e7" property="e7" jdbcType="VARCHAR" />
+    <result column="e8" property="e8" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, pid, link, order, e1, e2, e3, e4, e5, e6, e7, e8
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_menu
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from sys_menu
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.who.tommy.entity.SysMenu" >
+    insert into sys_menu (id, name, pid, 
+      link, order, e1, e2, 
+      e3, e4, e5, e6, 
+      e7, e8)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{pid,jdbcType=BIGINT}, 
+      #{link,jdbcType=VARCHAR}, #{order,jdbcType=INTEGER}, #{e1,jdbcType=VARCHAR}, #{e2,jdbcType=VARCHAR}, 
+      #{e3,jdbcType=VARCHAR}, #{e4,jdbcType=VARCHAR}, #{e5,jdbcType=VARCHAR}, #{e6,jdbcType=VARCHAR}, 
+      #{e7,jdbcType=VARCHAR}, #{e8,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.who.tommy.entity.SysMenu" >
+    insert into sys_menu
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="pid != null" >
+        pid,
+      </if>
+      <if test="link != null" >
+        link,
+      </if>
+      <if test="order != null" >
+        order,
+      </if>
+      <if test="e1 != null" >
+        e1,
+      </if>
+      <if test="e2 != null" >
+        e2,
+      </if>
+      <if test="e3 != null" >
+        e3,
+      </if>
+      <if test="e4 != null" >
+        e4,
+      </if>
+      <if test="e5 != null" >
+        e5,
+      </if>
+      <if test="e6 != null" >
+        e6,
+      </if>
+      <if test="e7 != null" >
+        e7,
+      </if>
+      <if test="e8 != null" >
+        e8,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null" >
+        #{pid,jdbcType=BIGINT},
+      </if>
+      <if test="link != null" >
+        #{link,jdbcType=VARCHAR},
+      </if>
+      <if test="order != null" >
+        #{order,jdbcType=INTEGER},
+      </if>
+      <if test="e1 != null" >
+        #{e1,jdbcType=VARCHAR},
+      </if>
+      <if test="e2 != null" >
+        #{e2,jdbcType=VARCHAR},
+      </if>
+      <if test="e3 != null" >
+        #{e3,jdbcType=VARCHAR},
+      </if>
+      <if test="e4 != null" >
+        #{e4,jdbcType=VARCHAR},
+      </if>
+      <if test="e5 != null" >
+        #{e5,jdbcType=VARCHAR},
+      </if>
+      <if test="e6 != null" >
+        #{e6,jdbcType=VARCHAR},
+      </if>
+      <if test="e7 != null" >
+        #{e7,jdbcType=VARCHAR},
+      </if>
+      <if test="e8 != null" >
+        #{e8,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.who.tommy.entity.SysMenu" >
+    update sys_menu
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null" >
+        pid = #{pid,jdbcType=BIGINT},
+      </if>
+      <if test="link != null" >
+        link = #{link,jdbcType=VARCHAR},
+      </if>
+      <if test="order != null" >
+        order = #{order,jdbcType=INTEGER},
+      </if>
+      <if test="e1 != null" >
+        e1 = #{e1,jdbcType=VARCHAR},
+      </if>
+      <if test="e2 != null" >
+        e2 = #{e2,jdbcType=VARCHAR},
+      </if>
+      <if test="e3 != null" >
+        e3 = #{e3,jdbcType=VARCHAR},
+      </if>
+      <if test="e4 != null" >
+        e4 = #{e4,jdbcType=VARCHAR},
+      </if>
+      <if test="e5 != null" >
+        e5 = #{e5,jdbcType=VARCHAR},
+      </if>
+      <if test="e6 != null" >
+        e6 = #{e6,jdbcType=VARCHAR},
+      </if>
+      <if test="e7 != null" >
+        e7 = #{e7,jdbcType=VARCHAR},
+      </if>
+      <if test="e8 != null" >
+        e8 = #{e8,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.who.tommy.entity.SysMenu" >
+    update sys_menu
+    set name = #{name,jdbcType=VARCHAR},
+      pid = #{pid,jdbcType=BIGINT},
+      link = #{link,jdbcType=VARCHAR},
+      order = #{order,jdbcType=INTEGER},
+      e1 = #{e1,jdbcType=VARCHAR},
+      e2 = #{e2,jdbcType=VARCHAR},
+      e3 = #{e3,jdbcType=VARCHAR},
+      e4 = #{e4,jdbcType=VARCHAR},
+      e5 = #{e5,jdbcType=VARCHAR},
+      e6 = #{e6,jdbcType=VARCHAR},
+      e7 = #{e7,jdbcType=VARCHAR},
+      e8 = #{e8,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
